@@ -11,13 +11,9 @@
 |
 */
 
-Route::view('/', 'welcome');
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
-
-Route::group(['middleware' => 'auth'], function () {
-    Route::view('/home', 'home');
-});
 
 Route::group(['middleware' => 'allowed'], function () {
     Route::get('chat', 'ChatsController@index');
@@ -29,4 +25,5 @@ Route::group(['middleware' => 'allowed'], function () {
     Route::get('users', 'UserController@index');
     Route::get('user/{user}/confirm', 'UserController@confirm');
     Route::get('user/{user}/block', 'UserController@block');
+    Route::get('user/{user}/unblock', 'UserController@unblock');
 });

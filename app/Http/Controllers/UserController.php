@@ -16,7 +16,7 @@ class UserController extends Controller
     /** */
     public function confirm(User $user)
     {
-        $user->update(['confirmed' => true]);
+        $user->update(['is_confirmed' => true]);
 
         return redirect('/users');
     }

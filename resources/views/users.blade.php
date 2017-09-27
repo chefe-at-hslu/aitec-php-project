@@ -14,9 +14,9 @@
                                     <th>Id</th>
                                     <th>Name</th>
                                     <th>EMail</th>
+                                    <th>Type</th>
                                     <th>Confirmed</th>
                                     <th>Blocked</th>
-                                    <th>Type</th>
                                 </tr>
                             </thead>
                             <body>
@@ -25,6 +25,9 @@
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
+                                        <td>
+                                            <p>{{ $user->isAdmin() ? 'admin' : 'standard' }}</p>
+                                        </td>
                                         <td>
                                             @if ($user->isConfirmed())
                                                 <p>Confirmed<p>
@@ -36,11 +39,8 @@
                                             @if ($user->isBlocked())
                                                 <a class="btn btn-danger btn-small" href="/user/{{ $user->id }}/unblock">Unblock</a>
                                             @else
-                                                <a class="btn btn-success btn-small" href="/user/{{ $user->id }}/block">Block</a>
+                                                <a class="btn btn-danger btn-small" href="/user/{{ $user->id }}/block">Block</a>
                                             @endif
-                                        </td>
-                                        <td>
-                                            <p>{{ $user->isAdmin() ? 'admin' : 'standard' }}</p>
                                         </td>
                                     </tr>
                                 @endforeach
