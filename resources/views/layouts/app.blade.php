@@ -38,15 +38,17 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="/">Home</a></li>
+                        @auth
+                            <li><a href="/">Home</a></li>
 
-                        @if (Auth::user()->isConfirmedAndNotBlocked())
-                            <li><a href="/chat">Chat</a></li>
-                        @endif
+                            @if (Auth::user()->isConfirmedAndNotBlocked())
+                                <li><a href="/chat">Chat</a></li>
+                            @endif
 
-                        @if (Auth::user()->isAdmin())
-                            <li><a href="/users">Users</a></li>
-                        @endif
+                            @if (Auth::user()->isAdmin())
+                                <li><a href="/users">Users</a></li>
+                            @endif
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
