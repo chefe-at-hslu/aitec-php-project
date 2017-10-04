@@ -189,6 +189,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['messages']
@@ -210,6 +211,16 @@ var render = function() {
       return _c("li", { staticClass: "left clearfix" }, [
         _c("div", { staticClass: "chat-body clearfix" }, [
           _c("div", { staticClass: "header" }, [
+            _c("img", {
+              staticClass: "avatar",
+              attrs: {
+                src:
+                  "http://www.gravatar.com/avatar/" +
+                  message.user.gravatar +
+                  "?size=32"
+              }
+            }),
+            _vm._v(" "),
             _c("strong", { staticClass: "primary-font" }, [
               _vm._v(
                 "\n                    " +

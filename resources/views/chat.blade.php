@@ -45,6 +45,10 @@
             color: #777777;
         }
 
+        .avatar {
+            border-radius: 50%;
+        }
+
         .panel-body {
             overflow-y: scroll;
             height: 350px;
